@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lomake</title>
+    <style>
+    *  { background-color:  lightblue;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .my-form {
+        width: 500px;
+        padding: 20px;
+        margin: 50px auto;
+        border: 3px solid rgb(0, 0, 0);
+        background-color: rgb(155, 232, 255);
+        }
+    .form-group  {
+        margin: 15px;
+    }
+    .form-group label {
+        font-weight:100;
+        
+    }
+    .form-group input, .form-group textarea, .form-group button {
+        width: 100%;
+        font-size: 1.2em;
+        padding: 5px;
+    }
+    .otsikko {
+        margin: 15px
+    }
+    .kala {
+        padding: 15px
+    }
+    .error {
+        color: red;
+    }
+<<<<<<< HEAD
+   
+=======
+    .validation-results { 
+        color: red; 
+    }
+>>>>>>> 05426549db3462ff1f3e050f0312d9c714b7aabd
+    </style>
+</head>
+<body>
+
+    <form class="my-form" id="form" onsubmit="checkNimi(event)">
+
+        <div class="otsikko">
+            <h1>Rekisteröitymislomake</h1>
+        </div>
+
+
+        <div class="form-group">
+            <label for="nimi">Käyttäjä ID:</label>
+            <input type="text" name="nimi" id="id">
+            <span id="id_error" class="error"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Salasana:</label>
+            <input type="text" name="email" id="salasana">
+        </div>
+
+        <div class="form-group">
+                <label for="email">Nimi:</label>
+                <input type="text" name="email" id="nimi">
+                <span id="nimi_error" class="error"></span>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Osoite:</label>
+                <input type="text" name="email" id="osoite">
+        </div>
+        
+        <div class="form-group">
+                <label for="email">Maa:</label>
+                <select>              
+                    <option value="Maa">(Valitse maa)</option>
+                    <option value="Suomi">Suomi</option>
+                    <option value="Ruotsi">Ruotsi</option>
+                    <option value="Venäjä">Venäjä</option>
+                    <option value="Muu">Muu</option>
+                </select>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Postinumero:</label>
+                <input type="text" name="email" id="posti">
+                <span id="posti_error" class="error"></span>
+        </div>
+
+        <div class="form-group">
+                <label for="emailTxt">Sähköposti:</label>
+                <input id="emailTxt" type="text" onkeyup="myValidation(this.value)">
+                <div class="validation-results">
+                    <p id="regex"></p>
+                </div>
+        </div>
+
+        <div class="kala">
+                <label for="email">Sukupuoli:</label>
+                <input type="radio" name="email" value="mies">Mies
+                <input type="radio" name="email" value="nainen">Nainen
+        </div>
+
+        <div class="kala">
+                <label for="email">Kieli:</label>
+                <input type="Radio" name="email" value="Suomi">Suomi
+                <input type="Radio" name="email" value="Muu">Muu
+        </div>
+
+        <div class="form-group">
+            <label for="email">Lisätietoja:</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button onclick>Lähetä</button>
+        </div>
+        
+    </form>
+
+    <script>
+
+        function checkNimi(e){
+        e.preventDefault();
+        var id = document.getElementById('id').value;
+        var error = document.getElementById('id_error');
+        
+        if (id.length < 6) {
+           error.innerHTML = "Käyttäjä ID pitää olla vähintään 6 merkkiä pitkä";
+        } else {
+            error.innerHTML = "";
+        }
+
+          // Very simple regex
+          function regexEmail(email) {
+            var re = /^\S+@\S+[\.][0-9a-z]+$/;
+            return re.test(email);
+        }
+
+        var id = document.getElementById('posti').value;
+        var error = document.getElementById('posti_error');
+        
+        if (id.length < 5) { 
+           error.innerHTML = "Postinumerossa pitää olla 5 numeroa";
+        } else {
+            error.innerHTML = "";
+        }
+        function myValidation(str){
+            if (regexEmail(str)) {
+                document.getElementById('regex').innerHTML = "Email on ok";
+            } else {
+                document.getElementById('regex').innerHTML = "Email on virheellinen";
+            }
+            
+        }
+        // Very simple regex
+        function regexEmail(email) {
+            var re = /^\S+@\S+[\.][0-9a-z]+$/;
+            return re.test(email);
+        }
+    }
+
+      function myValidation(str){
+            if (regexEmail(str)) {
+                document.getElementById('regex').innerHTML = "Email on ok";
+            } else {
+                document.getElementById('regex').innerHTML = "Email on virheellinen";
+            }
+            
+        }
+
+        // Very simple regex
+        function regexEmail(email) {
+            var re = /^\S+@\S+[\.][0-9a-z]+$/;
+            return re.test(email);
+        }
+
+
+    </script>
+</body>
+</html>

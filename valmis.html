@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lomake</title>
+    <style>
+        
+    *  { background-color:  lightblue;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    .my-form {
+        width: 500px;
+        padding: 20px;
+        margin: 50px auto;
+        border: 3px solid rgb(0, 0, 0);
+        }
+    .form-group  {
+        margin: 15px;
+    }
+    .form-group label {
+        font-weight:100;
+        
+    }
+    .form-group input, .form-group textarea, .form-group button {
+        width: 100%;
+        font-size: 1.2em;
+        padding: 5px;
+    }
+    .otsikko {
+        margin: 15px
+    }
+    .kala {
+        padding: 15px
+    }
+    .error {
+        color: red;
+    }
+   
+   
+    </style>
+</head>
+<body>
+
+    <form class="my-form" name="my-form" id="form" onsubmit="checkForm(event)">
+
+        <div class="otsikko">
+            <h1>Rekisteröitymislomake</h1>
+        </div>
+
+
+        <div class="form-group">
+            <label for="nimi">Käyttäjä ID:</label>
+            <input type="text" name="id" id="id">
+            <span id="id_error" class="error"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="salasana">Salasana:</label>
+            <input type="text" name="salasana" id="salasana">
+            <span id="salasana_error" class="error"></span>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Nimi:</label>
+                <input type="text" name="nimi" id="nimi">
+                <span id="nimi_error" class="error"></span>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Osoite:</label>
+                <input type="text" name="osoite" id="osoite">
+                <span id="osoite_error" class="error"></span>
+        </div>
+        
+        <div class="form-group">
+                <label for="email">Maa:</label>
+                <select name="maa" id="maa">              
+                    <option value="">(Valitse maa)</option>
+                    <option value="Suomi">Suomi</option>
+                    <option value="Ruotsi">Ruotsi</option>
+                    <option value="Venäjä">Venäjä</option>
+                    <option value="Muu">Muu</option>
+                </select> <br>
+                    <span id="maa_error" class="error"></span>
+        </div>
+                 
+
+        <div class="form-group">
+                <label for="email">Postinumero:</label>
+                <input type="text" name="posti" id="posti">
+                <span id="posti_error" class="error"></span>
+        </div>
+
+        <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+                <span id="email_error" class="error"></span>
+        </div>
+
+        <div class="kala">
+                <label for="sukupuoli">Sukupuoli:</label>
+                <input type="radio" name="sukupuoli" value="mies">Mies
+                <input type="radio" name="sukupuoli" value="nainen">Nainen
+                <br><span id="sukupuoli_error" class="error"></span>
+        </div>
+
+        <div class="kala">
+                <label for="kielitaito">Kielitaito:</label><br>
+                <input type="checkbox" name="kielitaito" id="suomi"><label for="suomi">Suomi</label><br>
+                <input type="checkbox" name="kielitaito" id="ruotsi"><label for="ruotsi">Ruotsi</label><br>
+                <input type="checkbox" name="kielitaito" id="englanti"><label for="englanti">Englanti</label><br>
+                <input type="checkbox" name="kielitaito" id="venäjä"><label for="venäjä">Venäjä</label><br>
+                <span class="error" id="kieli_error"></span><br>
+               
+        </div>
+
+        <div class="form-group">
+            <label for="email">Lisätietoja:</label>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button onclick>Lähetä</button>
+        </div>
+
+    </form>
+
+    <script>
+   // Very simple regex
+    function regexEmail(email) {
+        var re = /^\S+@\S+[\.][0-9a-z]+$/;
+        return re.test(email);
+    }
+       
+
+    function checkForm(e){
+        
+        e.preventDefault(); // Estää lomakkeen lähettämisen
+        
+        var error_spans = document.getElementsByTagName('span');
+        
+        for (var x=0; x < error_spans.length; x++) {
+            error_spans[x].innerHTML = "";
+        }
+
+
+        // ID:n tarkistus
+        var id = document.getElementById('id').value;
+        var error = document.getElementById('id_error');
+        
+        if (id.length < 6) {
+           error.innerHTML = "Käyttäjä ID pitää olla vähintään 6 merkkiä pitkä";
+        } 
+
+
+        //salasana
+        var id = document.getElementById('salasana').value;
+        var error = document.getElementById('salasana_error');
+        
+        if (id.length < 5) { 
+           error.innerHTML = "Salasanassa pitää olla vähintään 5 kirjainta ";
+        } 
+    
+
+        //Nimi
+        var id = document.getElementById('nimi').value;
+        var error = document.getElementById('nimi_error');
+        
+        if (id.length < 2) { 
+           error.innerHTML = "Nimessä pitää olla 2 kirjainta";
+        } 
+
+        //Osoite
+        var id = document.getElementById('osoite').value;
+        var error = document.getElementById('osoite_error');
+        
+        if (id.length < 5) { 
+           error.innerHTML = "osoitteessa pitää olla 5 kirjainta";
+        } 
+            
+        // Maa
+        var maa = document.getElementById('maa').value;
+        
+        if (maa == "") {
+            document.getElementById("maa_error").innerHTML = "Maa pitää valita";
+        } 
+    
+        //Posti
+        var posti = document.getElementById('posti').value;
+        var error = document.getElementById('posti_error');
+        
+         if (id.length < 5) { 
+           error.innerHTML = "Postinumerossa pitää olla 5 numeroa";
+        } 
+     
+
+        //Email
+        var email = document.getElementById('email').value;
+        var error = document.getElementById('email_error');
+        
+
+        if (!regexEmail(email)){
+            error.innerHTML = "Sähköpostiosoitteen tulee olla sähköpostiosoitteen muotoinen";
+        } 
+
+        //Sukupuoli
+        var sukupuoli = document.forms['my-form']['sukupuoli'].value;
+        
+        if (sukupuoli == "") {
+            document.getElementById("sukupuoli_error").innerHTML = "Sukupuoli pitää valita";
+        } 
+   
+        //Kielitaito
+        var kielitaito = document.forms['my-form']['kielitaito'];
+        var valittu = 0;
+        
+        for (var i = 0; i<kielitaito.length; i++) {
+            console.log(kielitaito[i].checked);
+            if (kielitaito[i].checked == true) {
+                valittu++;
+            }
+        }
+        if (valittu < 1) {
+            document.getElementById('kieli_error').innerHTML = "Valitse vähintään yksi kieli!";
+            
+        }
+
+        
+
+   
+   
+    }
+    </script>
+</body>
+</html>

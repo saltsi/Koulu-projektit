@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="Language" content="fi" />
+        <script src=skriptit.js></script>
+        <title>Kaverilista</title>
+    </head>
+    
+<body>
+
+
+<h1>Kaverilista</h1> 
+<button onclick="lisaaKaveri()">Lisää Kaveri</button>
+<button onclick="poistaKaveri()">Poista Kaveri</button>
+<button onclick="jarjestaFrendit()">Järjestä Kaverit</button>
+<ul id="kamut"></ul>
+
+
+<script>
+
+var kamut = [];
+
+        //järjestä kaverit
+function jarjestaFrendit(){
+    kamut.sort();
+    console.log(kamut);
+    listaaKaverit();
+}
+
+        //poista kaveri
+function poistaKaveri() {
+    document.getElementById("kamut");
+    kamut.pop();
+    console.log(kamut);
+    listaaKaverit();
+}
+
+        //lisää kaveri
+function lisaaKaveri(){
+
+    var nimi = window.prompt("Anna kaverin nimi");
+    kamut.push(nimi);
+    console.log(kamut);
+
+    listaaKaverit();
+}
+
+function listaaKaverit(){
+
+    document.getElementById('kamut').innerHTML = '';
+
+    for (var i=0; i < kamut.length; i++){
+        document.getElementById('kamut').innerHTML += '<li>' + kamut[i] + '</li>';
+    }
+}
+
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("nimi");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("kamut");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+        
+                }
+            }
+        }
+
+
+
+
+</script>
+
+</body>
+</html>

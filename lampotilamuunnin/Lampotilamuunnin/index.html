@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+    background: linear-gradient(to right, rgb(35, 207, 179), rgb(90, 1, 28));
+}
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+p {
+    font-family: verdana;
+    font-size: 25px;
+}
+a {
+    font-style: oblique;
+    font-family: sans-serif;
+    color: rgb(255, 0, 0);   
+}
+        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="Language" content="fi"/>
+        
+        <title>Lämpötilamuunnin</title>
+    </head>
+    <body>
+        <h1>Lämpötilamuunnin</h1>
+            <select id="valinta">
+                <option value="celsiustofahrenheit">Celsius -> Fahrenheit</option>
+                <option value="celsiustokelvin">Celsius -> Kelvin</option>
+                <option value="fahrenheittocelsius">Fahrenheit -> Celsius</option>
+                <option value="fahrenheittokelvin">Fahrenheit -> Kelvin</option>
+                <option value="kelvintocelsius">Kelvin -> Celsius</option>
+                <option value="kelvintofahrenheit">Kelvin -> Fahrenheit</option>
+            </select><br><br>
+            <input id="input" type="number" placeholder="Syötä lämpötila" id="arvo" oninput="tempConv(this.value)">
+            <p>=  <span id="output"></span></p><hr>
+
+        <script src=skriptit.js></script>   
+        
+        <script>
+        function tempConv(temp)
+{
+    var valinta = document.getElementById('valinta').value;
+    var tulos = 0;
+
+    console.log(valinta);
+    
+    switch(valinta) {
+        case "celsiustofahrenheit":
+            tulos = c2f(temp);
+            break;
+
+        case "celsiustokelvin":
+            tulos = c2k(temp);
+            break;
+
+        case "fahrenheittocelsius":
+            tulos = f2c(temp);
+            break;
+
+        case "fahrenheittokelvin":
+            tulos = f2k(temp);
+            break;
+
+        case "kelvintocelsius":
+            tulos = k2c(temp);
+            break;
+
+        case "kelvintofahrenheit":
+            tulos = k2f(temp);
+            break;
+    }
+
+    console.log(tulos);
+    document.getElementById('output').innerHTML = tulos.toFixed(2);
+}
+
+
+function c2f(c){
+    return (c*1.8)+32;
+}
+
+function c2k(c){
+    return (c*1)+273.15;
+}
+
+function f2c(c){
+    return (c-32)/1.8;
+}
+
+function f2k(c){
+    return ((c-32)/1.8)+273.15;
+}
+
+function k2c(c){
+    return c-273.15;
+}
+
+function k2f(c){
+    return ((c-273.15)*1.8)+32;
+}
+        
+        </script>
+    </body>
+</html>

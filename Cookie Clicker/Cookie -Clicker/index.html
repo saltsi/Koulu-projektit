@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    
+body {
+ background-image: url("img/background.jpg");
+ background-size: 100%;
+}
+
+.container{
+    width: 625px;
+    margin: 60px auto;
+}
+
+.efect {
+    width: 50px;
+    
+    -ms-transform: skew(10deg, 10deg); /* IE 9 */
+    -webkit-transform: skew(10deg, 10deg); /* Safari */
+    transform: skew(10deg, 10deg);
+}
+h1 {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(255, 123, 0);
+    font-family: sans-serif;
+}
+p {
+    font-family: verdana;
+    font-size: 50px;
+    color: rgb(255, 123, 0); 
+}
+a {
+    font-style: oblique;
+    font-family: sans-serif;
+    color: rgb(255, 123, 0);   
+}
+.hide{
+    display: none;
+}
+
+.kuva{
+        text-align: center;
+        padding: 10px;
+        }
+
+</style>
+        
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="Language" content="fi"/>
+        
+        <title>Clicker</title>
+    </head>
+    
+<body>
+    
+<div class="container">
+    <h1 class=>Cookie Clicker</h1><hr>
+    <div class="canvas-container"></div>
+
+            <div class="kuva">
+                <img onclick="nappi()" src="img/cookie.png" alt="cookie" style="height:200px;">
+            </div>
+        <button onclick="yksipuoli()">1.5x (150)</button>
+        <button onclick="kolme()">3x (3000)</button>
+        <button onclick="kuusi()">6x (6000)</button>
+        <button onclick="kymmenen()">10x (10000)</button>
+        <button onclick="kaksi()">20x (20000)</button>
+        <p id="laskenta"></p>
+        <p id="info"></p>
+    </div>
+   
+
+    <script src=script.js></script>
+
+<script>
+var kerroin = 1;
+var laskuri = 0;
+var timerId;
+var info = document.getElementById('info');
+
+
+
+function nappi(){
+    laskuri = laskuri + 1 * kerroin;
+    console.log('Pisteet: ' + laskuri);
+    tulosta();
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+    $('button').on('click', function () {
+      $(this)
+        .find('[data-fa-i2svg]')
+        .toggleClass('fa-angle-down')
+        .toggleClass('fa-angle-right');
+    });
+  });
+
+
+function yksipuoli(){
+    if (laskuri < 150) {
+        info.innerHTML = "Ei Tarpeeksi Pisteitä";
+        return;
+    }
+    laskuri = laskuri-150;
+    kerroin = kerroin + 1;
+    tulosta();
+    console.log("kerroin: " + kerroin);
+    }
+
+function kolme(){
+    if (laskuri < 3000) {
+        show();
+        info.innerHTML = "Ei Tarpeeksi Pisteitä";
+        hide();
+        return;
+    }
+    laskuri = laskuri-3000;
+    kerroin = kerroin + 3;
+    tulosta();
+    console.log("kerroin:" + kerroin);
+    }
+
+function kuusi(){
+    if (laskuri < 6000) {
+        info.innerHTML = "Ei Tarpeeksi Pisteitä";
+        return;
+    }
+    laskuri = laskuri-6000;
+    kerroin = kerroin + 6;
+    tulosta();
+    console.log("kerroin:" + kerroin);
+    }
+
+function kymmenen(){
+    if (laskuri < 10000) {
+        info.innerHTML = "Ei Tarpeeksi Pisteitä";
+        return;
+    }
+    laskuri = laskuri-10000;
+    kerroin = kerroin + 10;
+    tulosta();
+    console.log("kerroin:" + kerroin);
+    }
+
+function kaksi(){
+    if (laskuri < 20000) {
+        info.innerHTML = "Ei Tarpeeksi Pisteitä";
+        return;
+    }
+    laskuri = laskuri-20000;
+    kerroin = kerroin + 20;
+    tulosta();
+    console.log("kerroin:" + kerroin);
+    }
+
+
+function aloita(){
+    if (laskuri < 5000) {
+        console.log("not enough CloutTokens")
+        return;
+    }
+    laskuri = laskuri-5;
+	timerId = setInterval(laske, 1000);
+	}
+
+function tulosta(){
+    console.log(laskuri);
+    document.getElementById("laskenta").innerHTML = laskuri;
+    }
+
+function laskuri(){
+    console.log(pisteet);
+    tulosta();
+    }
+
+function laske(){
+    console.log(laskuri);
+    laskuri = laskuri + 1 * kerroin * 10;
+    laskenta.innerHTML = laskuri;
+    }
+
+function hide(){
+    setTimeout(function(){
+    document.getElementById("info").classList.add('hide');
+       }, 3000);
+    }
+
+function show(){
+    document.getElementById("info").classList.remove('hide');
+}
+
+</script>
+</body>
+</html>

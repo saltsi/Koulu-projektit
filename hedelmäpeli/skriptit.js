@@ -41,6 +41,49 @@ function pelaa() {
 
 }
 
-function lukitus() {
+function lukitus(j) {
     
+    if (j.id == "lukko1") {
+        if (lukko1 == 0) {
+            lukko1 = 1;
+        } else {
+            lukko1 = 0;
+        }
+        console.log(lukko1);
+        vaihdaKuva(j);
+    }
+
+    if (j.id == "lukko2") {
+        console.log(j.id)
+        if (lukko2 == 0) {
+            lukko2 = 1;
+        } else {
+            lukko2 = 0;
+        }
+        console.log(lukko2);
+        vaihdaKuva(j);
+    }
+
+    if (j.id == "lukko3") {
+        console.log(j.id)
+        if (lukko3 == 0) {
+            lukko3 = 1;
+        } else {
+            lukko3 = 0;
+        }
+        console.log(lukko3);
+        vaihdaKuva(j);
+    }
+
+    function vaihdaKuva(elem) {
+        console.log(elem);
+        if (elem.dataset.lock == 'false')   { 
+            document.getElementById(elem.id).src = "./img/lukitus1.png";
+            elem.dataset.lock = "true";
+        }
+        else {
+            document.getElementById(elem.id).src = "./img/lukitus2.png"
+            elem.dataset.lock = "false"; 
+        }
+    }
 }

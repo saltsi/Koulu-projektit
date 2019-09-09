@@ -1,4 +1,4 @@
-var rahat = 500;
+var rahat = 50;
 var slots = [0,0,0];
 
 var images = [

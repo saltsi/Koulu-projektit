@@ -1,48 +1,68 @@
-var rahat = 50;
+var rahat = 150;
 var slots = [0,0,0];
-
 var images = [
-    "omena.png",
-    "päärynä.png",
-    "kirsikka.png"];
+"omena.png",
+"melooni.png",
+"päärynä.png",
+"kirsikka.png",];
 
-function slot() {
-    return Math.floor(Math.random() * 3);
+
+function updateUi(){
+    document.getElementById("rahat").innerHTML = rahat;
 }
 
-function voitto(slot1, slot2, slot3) {
+
+function slot() {
+    return Math.floor(Math.random() * images.length);
+}
+
+function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
-    rahat = rahat + 5;
-    } else {
-        rahat = rahat-1;
+        if (slot1 == 0) {
+            rahat = rahat + 100;
+        } else if(slot1 == 1) {
+            rahat = rahat + 100;
+        } else if(slot1 == 2) {
+            rahat = rahat + 100;
+        } else if (slot1 == 3) {
+            rahat = rahat + 100;
+        }
+    
     }
-    return rahat;
+
+    updateUi();
 }
 
 
 function pelaa() {
 
-    var n1 = slot();
-    var n2 = slot();
-    var n3 = slot();
+    rahat = rahat-1;
+
+    slots[0] = slot();
+    slots[1] = slot();
+    slots[2] = slot();
+
     if (rahat < 1) {
         return;
     }
-      
+
     var s1 = document.getElementById("slot1");
     var s2 = document.getElementById("slot2");
     var s3 = document.getElementById("slot3");
     
-    s1.src = "img/"+images[n1];
-    s2.src = "img/"+images[n2];
-    s3.src = "img/"+images[n3];
+    s1.src = "img/"+images[slots[0]];
+    s2.src = "img/"+images[slots[1]];
+    s3.src = "img/"+images[slots[2]];
 
-    document.getElementById("rahat").innerHTML = voitto(n1, n2, n3);
+    voitto(slots[0],slots[1], slots[2])
+    
 
+    updateUi();
+    
 }
 
 function lukitus(j) {
-    
+
     if (j.id == "lukko1") {
         if (lukko1 == 0) {
             lukko1 = 1;

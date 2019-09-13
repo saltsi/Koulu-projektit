@@ -19,13 +19,13 @@ function slot() {
 function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
         if (slot1 == 0) {
-            rahat = rahat + 100;
+            rahat = rahat + 20;
         } else if(slot1 == 1) {
-            rahat = rahat + 100;
+            rahat = rahat + 20;
         } else if(slot1 == 2) {
-            rahat = rahat + 100;
+            rahat = rahat + 20;
         } else if (slot1 == 3) {
-            rahat = rahat + 100;
+            rahat = rahat + 200;
         }
     
     }

@@ -1,4 +1,4 @@
-var rahat = 150;
+var rahat = 50;
 var slots = [0,0,0];
 var images = [
 "omena.png",
@@ -19,13 +19,13 @@ function slot() {
 function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
         if (slot1 == 0) {
-            rahat = rahat + 20;
+            rahat = rahat + 15;
         } else if(slot1 == 1) {
-            rahat = rahat + 20;
+            rahat = rahat + 15;
         } else if(slot1 == 2) {
-            rahat = rahat + 20;
+            rahat = rahat + 15;
         } else if (slot1 == 3) {
-            rahat = rahat + 200;
+            rahat = rahat + 100;
         }
     
     }

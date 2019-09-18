@@ -1,5 +1,8 @@
 var rahat = 50;
 var slots = [0,0,0];
+var locks = [0,0,0];
+
+var saa_lukita = false;
 var images = [
 "omena.png",
 "melooni.png",
@@ -9,7 +12,38 @@ var images = [
 
 function updateUi(){
     document.getElementById("rahat").innerHTML = rahat;
-}
+
+                                        //if (j.id == "lukko1") {
+    if (locks[1] == 0) {
+        if (locks[1] == 1) {
+        } else {
+            locks[1] = 2;    
+        }
+        console.log(lukko1);
+        vaihdaKuva(j, lukko1);                                                                                                            
+    }
+}                                        //}
+
+                                        //if (j.id == "lukko2") {
+    if (locks[2] == 0) {
+        if (locks[2] == 1) {
+        } else {
+            locks[2] = 2;    
+        }
+        console.log(lukko1);
+        vaihdaKuva(j, lukko1);                                                                                                            
+}                                       //}
+
+                                        //if (j.id == "lukko1") {
+    if (locks[3] == 0) {
+        if (locks[3] == 1) {
+        } else {
+            locks[3] = 2;    
+        }
+        console.log(lukko1);
+        vaihdaKuva(j, lukko1);                                                                                                            
+}                                       //}
+
 
 
 function slot() {
@@ -61,136 +95,70 @@ function pelaa() {
     
 }
 
-function lukitus(j) {
-
-    if (j.id == "lukko1") {
-        if (lukko1 == 0) {
-            lukko1 = 1;
-        } else {
-            lukko1 = 0;
-        }
-        console.log(lukko1);
-        vaihdaKuva(j);
+function vaihdaKuva(elem) {
+    console.log(elem);
+    if (elem.dataset.lock == 'false')   { 
+        document.getElementById(elem.id).src = "./img/lukitus1.png";
+        elem.dataset.lock = "true";
     }
-
-    if (j.id == "lukko2") {
-        console.log(j.id)
-        if (lukko2 == 0) {
-            lukko2 = 1;
-        } else {
-            lukko2 = 0;
-        }
-        console.log(lukko2);
-        vaihdaKuva(j);
+    else {
+        document.getElementById(elem.id).src = "./img/lukitus2.png"
+        elem.dataset.lock = "false"; 
     }
-
-    if (j.id == "lukko3") {
-        console.log(j.id)
-        if (lukko3 == 0) {
-            lukko3 = 1;
-        } else {
-            lukko3 = 0;
-        }
-        console.log(lukko3);
-        vaihdaKuva(j);
-    }
-
-    function vaihdaKuva(elem) {
-        console.log(elem);
-        if (elem.dataset.lock == 'false')   { 
-            document.getElementById(elem.id).src = "./img/lukitus1.png";
-            elem.dataset.lock = "true";
-        }
-        else {
-            document.getElementById(elem.id).src = "./img/lukitus2.png"
-            elem.dataset.lock = "false"; 
-        }
-    }
-
-    function lukitse(j) {
-
-        if (saa_lukita == false) {
-            return;
-        }
-    
-        if (j.id == "lukko1") {
-            if (lukko1 == 0) {
-                lukko1 = 1;
-            } else {
-                lukko1 = 0;    
-            }
-            console.log(lukko1);
-            vaihdaKuva(j, lukko1);                                                                                                                  
-        }
-    
-        if (j.id == "lukko2") {
-            console.log(j.id)
-            if (lukko2 == 0) {
-                lukko2 = 1;
-            } else {
-                lukko2 = 0;
-            }
-            console.log(lukko2);
-            vaihdaKuva(j,lukko2);
-        }
-    
-        if (j.id == "lukko3") {
-            console.log(j.id)
-            if (lukko3 == 0) {
-                lukko3 = 1;
-            } else {
-                lukko3 = 0;
-            }
-            console.log(lukko3);
-            vaihdaKuva(j,lukko3);
-    
-        }
-        
-    }
-    
-    function vaihdaKuva(elem, lukko) {
-        console.log(elem);
-        if (lukko == 0)   { 
-            document.getElementById(elem.id).src = "./img/lukitus1.png";
-        }
-        else {
-            document.getElementById(elem.id).src = "./img/lukitus2.png";
-        }
-    
-    }
-    
-    function update() {
-    
-        document.getElementById("panos").innerHTML = panos;
-        document.getElementById("rahat").innerHTML = rahat;
-    
-        // Tarkista lukitus
-        let l1 = document.getElementById("lukko1");
-        let l2 = document.getElementById("lukko2");
-        let l3 = document.getElementById("lukko3");
-        
-        vaihdaKuva(l1,lukko1);
-        vaihdaKuva(l2,lukko2);
-        vaihdaKuva(l3,lukko3);
-    
-        if (saa_lukita == false){
-            document.getElementById("lukko1").disabled = true;
-        } else {
-            document.getElementById("lukko1").disabled = false;
-        }
-    
-        if (saa_lukita == false){
-            document.getElementById("lukko2").disabled = true;
-        } else {
-            document.getElementById("lukko2").disabled = false;
-        }
-    
-        if (saa_lukita == false){
-            document.getElementById("lukko3").disabled = true;
-        } else {
-            document.getElementById("lukko3").disabled = false;
-        }
-
-
-    } 
 }
+
+function lukitse(j) {
+
+    if (locks[j] == 1) {
+        locks[j] = 0;
+    } else {
+        locks[j] = 1;
+    }
+
+}
+    
+function vaihdaKuva(elem, lukko) {
+    console.log(elem);
+    if (lukko == 0)   { 
+        document.getElementById(elem.id).src = "./img/lukitus1.png";
+    }
+    else {
+        document.getElementById(elem.id).src = "./img/lukitus2.png";
+    }
+
+}
+    
+function update() {
+
+    document.getElementById("panos").innerHTML = panos;
+    document.getElementById("rahat").innerHTML = rahat;
+
+    // Lukitusken tarkistus
+    let l1 = document.getElementById("lukko1");
+    let l2 = document.getElementById("lukko2");
+    let l3 = document.getElementById("lukko3");
+    
+    vaihdaKuva(l1,lukko1);
+    vaihdaKuva(l2,lukko2);
+    vaihdaKuva(l3,lukko3);
+
+    if (saa_lukita == false){
+        document.getElementById("lukko1").disabled = true;
+    } else {
+        document.getElementById("lukko1").disabled = false;
+    }
+
+    if (saa_lukita == false){
+        document.getElementById("lukko2").disabled = true;
+    } else {
+        document.getElementById("lukko2").disabled = false;
+    }
+
+    if (saa_lukita == false){
+        document.getElementById("lukko3").disabled = true;
+    } else {
+        document.getElementById("lukko3").disabled = false;
+    }
+
+
+} 

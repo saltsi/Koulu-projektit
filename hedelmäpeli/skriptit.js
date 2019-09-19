@@ -13,37 +13,23 @@ var images = [
 function updateUi(){
     document.getElementById("rahat").innerHTML = rahat;
 
-                                        //if (j.id == "lukko1") {
-    if (locks[1] == 0) {
-        if (locks[1] == 1) {
-        } else {
-            locks[1] = 2;    
-        }
-        console.log(lukko1);
-        vaihdaKuva(j, lukko1);                                                                                                            
+    
+    if (locks[0] == 0) {
+       document.getElementById("lukko1").src = "img/lukitus1.png";                                                                                                           
+    } else {
+        document.getElementById("lukko1").src = "img/lukitus2.png";      
     }
-}                                        //}
-
-                                        //if (j.id == "lukko2") {
+    if (locks[1] == 0) {
+        document.getElementById("lukko2").src = "img/lukitus1.png";                                                                                                           
+    } else {
+        document.getElementById("lukko2").src = "img/lukitus2.png";
+    }               
     if (locks[2] == 0) {
-        if (locks[2] == 1) {
-        } else {
-            locks[2] = 2;    
-        }
-        console.log(lukko1);
-        vaihdaKuva(j, lukko1);                                                                                                            
-}                                       //}
-
-                                        //if (j.id == "lukko1") {
-    if (locks[3] == 0) {
-        if (locks[3] == 1) {
-        } else {
-            locks[3] = 2;    
-        }
-        console.log(lukko1);
-        vaihdaKuva(j, lukko1);                                                                                                            
-}                                       //}
-
+        document.getElementById("lukko3").src = "img/lukitus1.png";                                                                                                           
+    } else {
+        document.getElementById("lukko3").src = "img/lukitus2.png";
+    }
+}
 
 
 function slot() {
@@ -71,9 +57,14 @@ function voitto(slot1, slot2, slot3){
 function pelaa() {
 
     rahat = rahat-1;
+{   if (locks[0] == 0)
+    slots[0] = slot(); false
+}
 
-    slots[0] = slot();
     slots[1] = slot();
+
+
+
     slots[2] = slot();
 
     if (rahat < 1) {
@@ -115,8 +106,10 @@ function lukitse(j) {
         locks[j] = 1;
     }
 
+    updateUi();
 }
-    
+
+
 function vaihdaKuva(elem, lukko) {
     console.log(elem);
     if (lukko == 0)   { 

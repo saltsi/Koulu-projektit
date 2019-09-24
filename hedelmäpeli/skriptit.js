@@ -1,5 +1,7 @@
 var rahat = 50;
 var slots = [0,0,0];
+
+// Lukkojen tila
 var locks = [0,0,0];
 
 var saa_lukita = false;
@@ -57,15 +59,18 @@ function voitto(slot1, slot2, slot3){
 function pelaa() {
 
     rahat = rahat-1;
-{   if (locks[0] == 0)
-    slots[0] = slot(); false
-}
-
-    slots[1] = slot();
-
-
-
-    slots[2] = slot();
+    
+    if (locks[0] == 0){
+        slots[0] = slot();
+    }
+    
+    if (locks[1] == 0){
+        slots[1] = slot();
+    }
+    
+    if (locks[2] == 0){
+        slots[2] = slot();
+    }
 
     if (rahat < 1) {
         return;
@@ -80,6 +85,13 @@ function pelaa() {
     s3.src = "img/"+images[slots[2]];
 
     voitto(slots[0],slots[1], slots[2])
+    
+
+    if (lukko0 == 1 || lukko1 == 1 || lukko2 == 1){     
+            saa_lukita == false;
+        lukko0 = lukko1 = lukko2 = 0;
+        }   else { saa_lukita = true;
+        }
     
 
     updateUi();
@@ -98,6 +110,7 @@ function vaihdaKuva(elem) {
     }
 }
 
+// Vaihtaa lukon tilaa
 function lukitse(j) {
 
     if (locks[j] == 1) {

@@ -40,6 +40,15 @@ function slot() {
 
 function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
+
+                // tämä pelaa nappulaan, kun tulee voitto ei saa lukita uudestaan
+        // if (locks[0] == 1 || locks[1] == 1 || locks[2] == 1){       
+        //     saa_lukita = false;
+        //     locks[0] = locks[1] = locks[2] = 0;
+        // } else {
+        //     saa_lukita = true;
+        // }
+
         if       (slot1 == 0) {
             rahat = rahat + 10;
         } else if(slot1 == 1) {
@@ -87,16 +96,17 @@ function pelaa() {
     voitto(slots[0],slots[1], slots[2])
     
 
-    if (lukko0 == 1 || lukko1 == 1 || lukko2 == 1){     
-            saa_lukita == false;
-        lukko0 = lukko1 = lukko2 = 0;
-        }   else { saa_lukita = true;
-        }
-    
+    if (locks[0] == 1 || locks[1] == 1 || locks[2] == 1){       
+        saa_lukita = false;
+        locks[0] = locks[1] = locks[2] = 0;
+    } else {
+        saa_lukita = true;
+    }
 
-    updateUi();
     
+    updateUi();
 }
+
 
 function vaihdaKuva(elem) {
     console.log(elem);
@@ -112,6 +122,10 @@ function vaihdaKuva(elem) {
 
 // Vaihtaa lukon tilaa
 function lukitse(j) {
+
+    if (saa_lukita == false) {
+        return;
+    }
 
     if (locks[j] == 1) {
         locks[j] = 0;

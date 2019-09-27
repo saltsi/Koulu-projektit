@@ -1,15 +1,57 @@
 var rahat = 50;
 var slots = [0,0,0];
-
 // Lukkojen tila
 var locks = [0,0,0];
-
+var panos = 1;
 var saa_lukita = false;
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
 var images = [
 "omena.png",
 "melooni.png",
 "päärynä.png",
 "kirsikka.png",];
+
+        // omena
+if (n1 == n2 && n2 == n3) {
+
+    rahat = rahat + panos;
+
+    if (n1 == 0) {
+        if (panos == 1){
+            rahat += 1;
+        } else if(panos == 2) {
+            rahat += 2;
+        } else if (panos == 3){
+            rahat += 3;
+        }
+        
+        // Päärynä
+    } else if (n1 == 1) {
+        if (panos == 1){
+            rahat += 2;
+        } else if(panos == 2) {
+            rahat += 4;
+        } else if (panos == 3){
+            rahat += 6;
+        }
+        
+        // Kirsikka
+    } else if (n1 == 2) {
+        if (panos == 1){
+            rahat += 3;
+        } else if(panos == 2) {
+            rahat += 6;
+        } else if (panos == 3){
+            rahat += 10;
+        }
+    }
+    modal.style.display = "block";
+    
+
+    update();
+}
+
 
 
 function updateUi(){
@@ -40,15 +82,7 @@ function slot() {
 
 function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
-
-                // tämä pelaa nappulaan, kun tulee voitto ei saa lukita uudestaan
-        // if (locks[0] == 1 || locks[1] == 1 || locks[2] == 1){       
-        //     saa_lukita = false;
-        //     locks[0] = locks[1] = locks[2] = 0;
-        // } else {
-        //     saa_lukita = true;
-        // }
-
+        
         if       (slot1 == 0) {
             rahat = rahat + 10;
         } else if(slot1 == 1) {
@@ -66,7 +100,13 @@ function voitto(slot1, slot2, slot3){
 
 
 function pelaa() {
-
+    
+    if (rahat < 1) {
+        return;
+    } else if (rahat < panos){
+        return;
+    }
+    
     rahat = rahat-1;
     
     if (locks[0] == 0){
@@ -105,6 +145,20 @@ function pelaa() {
 
     
     updateUi();
+}
+
+var asetaPanos = function(x){
+    panos = x;
+    if(panos == 1){
+        document.getElementById("taulu1").src = "img/taulu1.png"
+    }else if (panos == 2){
+        document.getElementById("taulu1").src = "img/taulu2.png"
+    }else if (panos == 3){
+        document.getElementById("taulu1").src = "img/taulu3.png"
+    }
+
+    
+    update();
 }
 
 

@@ -13,38 +13,37 @@ var images = [
 "kirsikka.png",];
 
         // omena
-if (n1 == n2 && n2 == n3) {
-
+    if (n1 == n2 && n2 == n3) {
     rahat = rahat + panos;
 
     if (n1 == 0) {
-        if (panos == 1){
-            rahat += 1;
-        } else if(panos == 2) {
-            rahat += 2;
-        } else if (panos == 3){
-            rahat += 3;
-        }
+    if (panos == 1){
+        rahat += 1;
+    } else if(panos == 2) {
+        rahat += 2;
+    } else if (panos == 3){
+        rahat += 3;
+    }
         
         // Päärynä
     } else if (n1 == 1) {
-        if (panos == 1){
-            rahat += 2;
-        } else if(panos == 2) {
-            rahat += 4;
-        } else if (panos == 3){
-            rahat += 6;
-        }
+    if (panos == 1){
+        rahat += 2;
+    } else if(panos == 2) {
+        rahat += 4;
+    } else if (panos == 3){
+        rahat += 6;
+    }
         
         // Kirsikka
     } else if (n1 == 2) {
-        if (panos == 1){
-            rahat += 3;
-        } else if(panos == 2) {
-            rahat += 6;
-        } else if (panos == 3){
-            rahat += 10;
-        }
+    if (panos == 1){
+        rahat += 3;
+    } else if(panos == 2) {
+        rahat += 6;
+    } else if (panos == 3){
+        rahat += 10;
+    }
     }
     modal.style.display = "block";
     
@@ -83,7 +82,7 @@ function slot() {
 function voitto(slot1, slot2, slot3){
     if (slot1 == slot2 && slot2 == slot3) {
         
-        if       (slot1 == 0) {
+        if      (slot1 == 0) {
             rahat = rahat + 10;
         } else if(slot1 == 1) {
             rahat = rahat + 10;
@@ -106,6 +105,8 @@ function pelaa() {
     } else if (rahat < panos){
         return;
     }
+    
+    rahat = rahat - panos;
     
     rahat = rahat-1;
     

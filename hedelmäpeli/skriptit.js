@@ -12,6 +12,18 @@ var images = [
 "päärynä.png",
 "kirsikka.png",];
 
+
+modal.onclick = function() {
+    modal.style.display = "none";
+}  
+
+function slot() {
+    console.log()
+    return Math.floor(Math.random() * 3);
+}
+
+function voitto() {
+
         // omena
     if (n1 == n2 && n2 == n3) {
     rahat = rahat + panos;
@@ -47,7 +59,7 @@ var images = [
     }
     modal.style.display = "block";
     
-
+    }
     update();
 }
 

@@ -10,9 +10,9 @@ var images = [
 
 
 function pelaa() {
-    let dice = Math.floor(Math.random() * 10) + 1;
-    document.getElementById("dice").innerHTML = dice;
-    pisteet = dice;
+    let dice = Math.floor(Math.random() * 6) + 1;
+    document.getElementById("noppa").innerHTML = dice;
+    pisteet += 4;
     document.getElementById("pisteet").innerHTML = pisteet;
-    var s1 = document.getElementById("noppa").innerHTML = pisteet
+    // document.getElementById("noppa").src =
     }

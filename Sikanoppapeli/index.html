@@ -8,13 +8,21 @@
 </head>
 <body>
     <h1>sikanoppapeli</h1>
-
-
+    
+    <p> Pisteet: <span id="pisteet"> </span> <p></p>
 <button onclick="pelaa()">Pelaa</button>
-
-<span id="noppa"></span>
-<span id="pisteet"></span>
-
+    <span id="noppa"></span><br><br>
+    <span id="pisteet"></span>
 <script src="skriptit.js"></script>
+
+<button onclick="vaihdavuoro()" id="vaihdavuoro">vaihda vuoro</button>
+
+<div class="container" id="pistetaulukko">
+        <p>vuoro: <span id="turn"> </span>  </p>
+        <p>pelaaja yksi: <span id="paikka1"></span><p>
+        <p>pelaaja kaksi: <span id="paikka2"></span></p></div>
+        <p><span id="voittaja"> </span> </p>
+        <iframe src='http://nationalvodkaday.com/countdown/index.html' frameborder='0' width='330' height='230' /></iframe>
+
 </body>
 </html>

@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>sikanoppapeli</title>
+        <style>
+        body {
+        background: linear-gradient(to right, rgb(35, 207, 179), rgb(90, 1, 28));
+        }
+        </style>
 </head>
 <body>
+    <div class="container">
     <h1>sikanoppapeli</h1>
-    
-    <p> Pisteet: <span id="pisteet"> </span> <p></p>
-<button onclick="pelaa()">Pelaa</button>
-    <span id="noppa"></span><br><br>
+    <button onclick="pelaa()">Pelaa</button><br>
+    <img id="noppa" src="img/1.png" width="50px">
+    <img id="nopat" src="img/1.png" width="50px">
+    <p> Pisteet: <span id="pisteet"> </span><br><br>
     <span id="pisteet"></span>
 <script src="skriptit.js"></script>
-
-<button onclick="vaihdavuoro()" id="vaihdavuoro">vaihda vuoro</button>
-
-<div class="container" id="pistetaulukko">
-        <p>vuoro: <span id="turn"> </span>  </p>
-        <p>pelaaja yksi: <span id="paikka1"></span><p>
-        <p>pelaaja kaksi: <span id="paikka2"></span></p></div>
-        <p><span id="voittaja"> </span> </p>
-        <iframe src='http://nationalvodkaday.com/countdown/index.html' frameborder='0' width='330' height='230' /></iframe>
-
+    <button onclick="vaihdavuoro()" id="vaihdavuoro">vaihda vuoro</button><br>
+    <!-- <div class="container" id="pistetaulukko"></div> -->
+    <p>vuoro: <span id="pelaaja"> </span></p>
+    <p>pelaaja yksi: <span id="pelaaja1"></span>
+    <p>pelaaja kaksi: <span id="pelaaja2"></span></p>
+    <span id="voittaja"> </span>
+    </div>
+    <script src="skriptit.js"></script>
 </body>
 </html>

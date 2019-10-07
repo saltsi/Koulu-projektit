@@ -5,31 +5,60 @@ var pistetaulukko = [0,0];
 var vuoro = 0;
 var kokopisteet = 0;
 var images = [
-"img/1.png",
-"img/2.png",
-"img/3.png",
-"img/4.png",
-"img/5.png",
-"img/6.png" ];
-
+"1.png",
+"2.png",
+"3.png",
+"4.png",
+"5.png",
+"6.png"];
 
 function pelaa() {
     let dice = Math.floor(Math.random() * 6) + 1;
+    let dice2 = Math.floor(Math.random() * 6) + 1;
     document.getElementById("noppa").innerHTML = dice;
     pisteet += dice;
     document.getElementById("pisteet").innerHTML = pisteet;
     document.getElementById("noppa").src = "img/"+images[dice - 1];
+    document.getElementById("nopat").src = "img/"+images[dice2 - 1];
+    
+    if (dice == 1 ){
+      pisteet = 0;
+      vaihdavuoro();
+      }
     }
 
     function vaihdavuoro() {
-        console.log('vaihdavuoro');
-        if (vuoro === 0) {
-          pistetaulukko[0] += pisteet;
-          vuoro = 1;
-        } else {
-          pistetaulukko[1] += pisteet;
-          vuoro = 0;
-        }
-        pisteet = 0;
-        refresh();
+        pistetaulukko[vuoro] += pisteet;
+      
+        if (pistetaulukko[vuoro] >= 100){
+          pelaajat();
+          alert("VOITTO");
+          document.getElementById("pelaa").disabled = true;
+          document.getElementById("vaihda").disabled = true;   
+          return;
       }
+      
+      vuoro = vuoro + 1;
+      
+      if (vuoro > pistetaulukko.length - 1) {
+        vuoro = 0;
+      }
+      pisteet = 0;
+      
+      pelaajat();
+    }
+
+
+      var diceDOM = document.querySelector('.dice');
+
+      function pelaajat(){
+        document.getElementById("pelaaja1").innerHTML = pistetaulukko[0];
+        document.getElementById("pelaaja2").innerHTML = pistetaulukko[1];
+    
+        if(vuoro == 0){
+          document.getElementById("pelaaja").innerHTML = "Pelaaja-1"
+        }else if(vuoro == 1){
+          document.getElementById("pelaaja").innerHTML = "Pelaaja-2"
+        }
+      
+    }

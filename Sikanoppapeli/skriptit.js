@@ -25,7 +25,24 @@ function pelaa() {
       pisteet = 0;
       vaihdavuoro();
       }
+
+    if ((dice == 1 || dice2 == 2) && dice != dice2){
+      pisteet = 0;
+      vaihdavuoro();
+    } else if (dice == dice2) {
+      if (dice == 1 && dice2 == 1){
+        pisteet += 25;
+      } else {
+        pisteet += (dice + dice2) * 2;
+      }
+    } else {
+      pisteet += dice + dice2;
+
     }
+    document.getElementById("pisteet").innerHTML = pisteet; 
+
+  }
+    
 
     function vaihdavuoro() {
         pistetaulukko[vuoro] += pisteet;
@@ -56,9 +73,8 @@ function pelaa() {
         document.getElementById("pelaaja2").innerHTML = pistetaulukko[1];
     
         if(vuoro == 0){
-          document.getElementById("pelaaja").innerHTML = "Pelaaja-1"
+          document.getElementById("pelaaja").innerHTML = "1"
         }else if(vuoro == 1){
-          document.getElementById("pelaaja").innerHTML = "Pelaaja-2"
+          document.getElementById("pelaaja").innerHTML = "2"
         }
-      
-    }
+      }

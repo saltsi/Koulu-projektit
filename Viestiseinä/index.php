@@ -8,8 +8,37 @@
     <link rel="stylesheet" href="tyylit.css">
 </head>
 <body>
-    <div class="center">
-        <?php echo "<h2>hello world!</h2>"; ?>
-    </div>
+
+<form class="my-form">
+        <h2> viestiseinä </h2>
+        <div class="form-group">
+            <label for="nimi">Aihe:</label>
+            <input type="text" id="aihe">
+            <span id="id_error" class="error"></span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="viesti">Viesti:</label>
+            <input type="text" id="viesti">
+            <span id="id_error" class="error"></span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="lähettäjä">Lähettäjä:</label>
+            <input type="text" id="lähettäjä">
+            <span id="id_error" class="error"></span>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="pvm">Päivämäärä:</label>
+            <input type="text" id="pvm">
+            <span id="id_error" class="error"></span>
+        </div>   
+        
+        <div class="form-group">
+            <button>Lähetä</button>
+
+        </div>
+    </form>
 </body>
 </html>

@@ -29,7 +29,7 @@
     <title>My Website</title>
 </head>
 <body>
-    <form method="GET" action="get_post.php">
+    <form method="POST" action="get_post.php">
         <div>
             <label>Name</label><br>
             <input type="text" name="name">

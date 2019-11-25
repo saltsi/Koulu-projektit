@@ -22,6 +22,16 @@
 
     echo $_SERVER['QUERY_STRING'];
 
+
+    // create connection
+$conn = mysqli_connect('lovalhost', 'root', '123456', 'phpblog');
+
+// check connection
+if(mysqli_connect_errno()){
+    // connection failed
+    echo 'Failed to conect to MySQL '. mysqli_connect_errno();
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,7 +62,3 @@
     <h1><?php echo "{$name}'s Profile"; ?></h1>
 </body>
 </html>
-
-
-
-//katso seuraavaksi php front to back, mysql video

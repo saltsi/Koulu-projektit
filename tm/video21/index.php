@@ -1,9 +1,18 @@
-<?php 
-// create connection
-$conn = mysqli_connect('lovalhost', 'root', '123456', 'phpblog');
+<?php
+    require('db.php');
 
-// check connection
-if(mysqli_connect_errno()){
-    // connection failed
-    echo 'Failed to conect to MySQL '. mysqli_connect_errno();
-}
+    // Create query
+    $query = 'SELECT * FROM posts';
+
+
+    // Get result
+    $result = mysqli_query($conn, $query);
+
+    // Fetch Data
+    $post = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    // Free Result
+    mysqli_free_result($result);
+
+    //Close Connection
+    mysqli_close($conn);

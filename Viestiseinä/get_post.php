@@ -24,11 +24,12 @@
 
 
     // create connection
-$conn = mysqli_connect('lovalhost', 'root', '123456', 'phpblog');
+$conn = mysqli_connect('localhost', 'root', '', 'phpblog');
 
 // check connection
 if(mysqli_connect_errno()){
-    // connection failed
+
+// connection failed
     echo 'Failed to conect to MySQL '. mysqli_connect_errno();
 }
 
@@ -37,6 +38,7 @@ if(mysqli_connect_errno()){
 <html>
 <head>
     <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.css">
 </head>
 <body>
     <form method="POST" action="get_post.php">

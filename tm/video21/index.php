@@ -10,6 +10,7 @@
 
     // Fetch Data
     $post = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    var_dumb($posts);
 
     // Free Result
     mysqli_free_result($result);

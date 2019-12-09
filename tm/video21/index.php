@@ -34,8 +34,8 @@
                     <small>Created on <?php echo $post['created_at']; ?> by
                     <?php echo $post['author']; ?></small>
                     <p><?php echo $post['body']; ?></p>
-                    <a class="btn btn-default" href="post.php?id=<?php
-                        echo $post['id']; ?>">Read More</a>
+                    <a class="btn btn-default" href="post.php?id=<?php 
+                        echo $post['id']; ?>">Read</a>
                 </div>
             <?php endforeach; ?>
             </div>

@@ -23,6 +23,6 @@
 				<small>Created on <?php echo $post['pvm']; ?> by <?php echo $post['lähettäjä']; ?></small>
 				<p><?php echo $post['viesti']; ?></p>
 			</div>
-		<?php endforeach; ?>
+		<?php endforeach;?>
 	</div>
-<?php include('inc/footer.php'); ?>
+<?php include('inc/footer.php');?>

@@ -5,7 +5,7 @@
     $query = 'SELECT * FROM posts';
 
 
-    // Get result
+    // Get Result
     $result = mysqli_query($conn, $query);
 
     // Fetch Data

@@ -1,24 +1,24 @@
 <?php
     require('db.php');
 
-    // get ID
+    // get id
     $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    // Create query
+    // create query
     $query = 'SELECT * FROM posts WHERE id = '.$id;
 
 
-    // Get result
+    // get result
     $result = mysqli_query($conn, $query);
 
-    // Fetch Data
+    // fetch data
     $post = mysqli_fetch_all($result);
     var_dump($post);
 
-    // Free Result
+    // free result
     mysqli_free_result($result);
 
-    //Close Connection
+    //close connection
     mysqli_close($conn);
     ?>
 

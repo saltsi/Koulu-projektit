@@ -20,7 +20,7 @@
     ?>
 
     <!DOCTYPE html>
-        <html>
+    <html>
             <head>
                 <title>PHP Blog</title>
                 <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.css">

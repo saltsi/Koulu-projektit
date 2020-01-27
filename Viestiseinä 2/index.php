@@ -10,7 +10,7 @@
 	//var_dump($posts);
 	// Free Result
 	mysqli_free_result($result);
-	// Close Connection
+	// close Connection
 	mysqli_close($conn);
 ?>
 

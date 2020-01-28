@@ -20,7 +20,7 @@
 		<?php foreach($posts as $post) : ?>
 			<div class="well">
 				<h3><?php echo $post['aihe']; ?></h3>
-				<small>Created on <?php echo $post['pvm']; ?> by <?php echo $post['lähettäjä']; ?></small>
+				<small>Created on <?php echo $post['pvm']; ?> by <?php echo $post['lahettaja']; ?></small>
 				<p><?php echo $post['viesti']; ?></p>
 			</div>
 		<?php endforeach;?>

@@ -1,0 +1,1 @@
+CREATE SCHEMA `viestiseina` DEFAULT CHARACTER SET utf8 ;

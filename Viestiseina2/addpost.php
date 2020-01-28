@@ -7,7 +7,7 @@
 		$aihe = mysqli_real_escape_string($conn, $_POST['aihe']);
 		$viesti = mysqli_real_escape_string($conn, $_POST['viesti']);
 		$lähettäjä = mysqli_real_escape_string($conn, $_POST['lähettäjä']);
-		$query = "INSERT INTO viestit(aihe, lähettäjä, viesti) VALUES('$aihe', '$lähettäjä', '$viesti')";
+		$query = "INSERT INTO viestit(aihe, lahettaja, viesti) VALUES('$aihe', '$lähettäjä', '$viesti')";
 		if(mysqli_query($conn, $query)){
 			header('Location: '.ROOT_URL.'');
 		} else {

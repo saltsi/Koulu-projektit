@@ -27,7 +27,6 @@ if (isset($_POST['btn_login'])){
     
 }
 
-
 ?>
 <?php include 'layout/header.php' ?>
 
@@ -49,7 +48,7 @@ if (isset($_POST['btn_login'])){
             </div>
 
             <input type="submit" class="btn btn-primary" value="Kirjaudu" name="btn_login">
-            
+
         </form>
     </div>
 </div>

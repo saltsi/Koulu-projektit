@@ -1,9 +1,9 @@
 <?php
 	require('config/config.php');
 	require('config/db.php');
-	// Check For Submit
+		// tarkistaa submitin
 	if(isset($_POST['submit'])){
-		// Get form data
+		// ottaa lomakkeen datan
 		$aihe = mysqli_real_escape_string($conn, $_POST['aihe']);
 		$viesti = mysqli_real_escape_string($conn, $_POST['viesti']);
 		$lähettäjä = mysqli_real_escape_string($conn, $_POST['lähettäjä']);

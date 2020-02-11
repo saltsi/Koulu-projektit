@@ -7,7 +7,7 @@
 	$result = mysqli_query($conn, $query);
 	// Fetch Data
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	//var_dump($posts);
+	// var_dump($posts);
 	// Free Result
 	mysqli_free_result($result);
 	// close Connection

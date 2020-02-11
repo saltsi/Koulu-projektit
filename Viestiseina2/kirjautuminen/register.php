@@ -32,7 +32,6 @@
                 <input class="form-control" type="password" placeholder="Salasana" name="passwd2">
             </div>
 
-
             <input type="submit" class="btn btn-primary" value="Rekisteröidy">
 
         </form>

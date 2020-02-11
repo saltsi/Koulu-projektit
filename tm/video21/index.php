@@ -15,7 +15,7 @@
     // Free Result
     mysqli_free_result($result);
 
-    //Close Connection
+    // Sulje yhteys
     mysqli_close($conn);
     ?>
 

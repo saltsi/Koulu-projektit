@@ -14,7 +14,7 @@
 	mysqli_close($conn);
 ?>
 
-<?php include('inc/header.php'); ?>
+<?php include('layout/header.php'); ?>
 	<div class="container">
 		<h1>Posts</h1>
 		<?php foreach($posts as $post) : ?>
@@ -25,4 +25,4 @@
 			</div>
 		<?php endforeach;?>
 	</div>
-<?php include('inc/footer.php');?>
+<?php include('layout/footer.php');?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once '../config/db_pdo.php';
+include_once 'config/db_pdo.php';
 
 
 if (!isset($_POST['firstname']) || !isset($_POST['lastname'])) {
@@ -36,4 +36,3 @@ if ($stmt->execute()) {
 } else {
     echo "Joku ongelma";
 }
-

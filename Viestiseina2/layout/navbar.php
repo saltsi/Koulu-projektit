@@ -13,6 +13,9 @@
           <ul class="nav navbar-nav">
             <li><a href="<?php echo ROOT_URL; ?>">Home</a></li>
             <li><a href="<?php echo ROOT_URL; ?>addpost.php">Lisää viesti</a></li>
+            <li><a href="<?php echo ROOT_URL; ?>register.php">Rekisteröidy</a></li>
+            <li><a href="<?php echo ROOT_URL; ?>login.php">Kirjaudu</a></li>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>

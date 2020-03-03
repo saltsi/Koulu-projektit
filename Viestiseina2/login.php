@@ -1,13 +1,15 @@
 <?php
 session_start();
 
+require('config/config.php');
+
 if (isset($_POST['btn_login'])){
 
-    include_once 'config/db.php';
+    include_once 'config/db_pdo.php';
 
     $email = trim($_POST['email']);
 
-    $stmt = $conn->prepare("SELECT id, email, passwd FROM users WHERE email = :email");
+    $stmt = $conn->prepare("SELECT id, email, salasana FROM users WHERE email = :email");
     $stmt->bindParam(':email',$email);
     $stmt->execute();
 
@@ -16,18 +18,17 @@ if (isset($_POST['btn_login'])){
     $rows = $stmt->fetchAll();
 
     if (count($rows)){
-        $passwd = $rows[0]['passwd'];
+        $passwd = $rows[0]['salasana'];
         if ( password_verify($_POST['passwd'], $passwd) ) {
             header('Location: admin.php');
         } else {
-            echo "Kirjautuminen ei onnistunut!";
+            echo "Kirjautuminen ei onnistunut";
             die();
         }
     }
 }
 
-?>
-<?php include 'layout/header.php' ?>
+include 'layout/header.php'; ?>
 
 <div class="container">
     <div class="row">

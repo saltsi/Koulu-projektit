@@ -1,4 +1,6 @@
-<?php include 'layout/header.php'; ?>
+<?php
+require('config/config.php');
+include 'layout/header.php'; ?>
 
 <div class="container">
     <div class="row">

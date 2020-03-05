@@ -6,6 +6,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+            
+            <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="#">Viestiseinä</a>
         </div>
@@ -15,6 +17,16 @@
             <li><a href="<?php echo ROOT_URL; ?>addpost.php">Lisää viesti</a></li>
             <li><a href="<?php echo ROOT_URL; ?>register.php">Rekisteröidy</a></li>
             <li><a href="<?php echo ROOT_URL; ?>login.php">Kirjaudu</a></li>
+            <li><a href="logout.php" class="nav-link">Kirjaudu ulos</a></li>
+
+              <?php if (isset($_SESSION['email'])): ?>
+          <li class="nav-item">
+            <a href="addpost.php" class="nav-link">Lisää viesti</a>
+          </li>
+          <li class="nav-item">
+            <a href="logout.php" class="nav-link">Kirjaudu ulos</a>
+          </li>
+        <?php endif; ?>
 
           </ul>
         </div><!--/.nav-collapse -->

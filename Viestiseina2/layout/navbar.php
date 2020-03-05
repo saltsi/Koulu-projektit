@@ -6,7 +6,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            
             <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="#">Viestiseinä</a>

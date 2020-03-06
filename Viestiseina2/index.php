@@ -1,16 +1,16 @@
 <?php
 	require('config/config.php');
 	require('config/db.php');
-	// Create Query
+		// Create Query
 	$query = 'SELECT * FROM viestit ORDER BY pvm DESC';
-	// Get Result
+		// Get Result
 	$result = mysqli_query($conn, $query);
-	// Fetch Data
+		// Fetch Data
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	// var_dump($posts);
-	// Free Result
+		// var_dump($posts);
+		// Free Result
 	mysqli_free_result($result);
-	// close Connection
+		// close Connection
 	mysqli_close($conn);
 ?>
 

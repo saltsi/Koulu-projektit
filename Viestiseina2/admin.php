@@ -30,7 +30,7 @@
 				<p><?php echo $post['viesti']; ?></p>
         		<a href="<?php echo ROOT_URL; ?>editpost.php?id=">Kirjaudu</a>
 				
-			   </div>
+			</div>
 		<?php endforeach; ?>
 	</div>
 <?php include('layout/footer.php'); ?>

@@ -30,7 +30,7 @@
 		<div class="container">
 			<a href="<?php echo ROOT_URL; ?>" class="btn btn-default">Back</a>
 			<h1><?php echo $post['aihe']; ?></h1>	
-			<small><?php echo $post['viestit']; ?><?php echo $post['lähettäjä']; ?></small>
+			<small><?php echo $post['viestit']; ?><?php echo $post['lahettäja']; ?></small>
 			<p><?php echo $post['viesti']; ?></p>
 			<hr>
 			<form class="pull-right" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">

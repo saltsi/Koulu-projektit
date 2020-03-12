@@ -8,19 +8,19 @@
             <span class="icon-bar"></span>
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#">Viestiseinä</a>
+          <a class="navbar-brand" href="#">Viestiseina</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="<?php echo ROOT_URL; ?>">Home</a></li>
-            <li><a href="<?php echo ROOT_URL; ?>addpost.php">Lisää viesti</a></li>
+            <li><a href="<?php echo ROOT_URL; ?>addpost.php">Lisaa viesti</a></li>
             <li><a href="<?php echo ROOT_URL; ?>register.php">Rekisteröidy</a></li>
             <li><a href="<?php echo ROOT_URL; ?>login.php">Kirjaudu</a></li>
             <li><a href="logout.php" class="nav-link">Kirjaudu ulos</a></li>
 
               <?php if (isset($_SESSION['email'])): ?>
           <li class="nav-item">
-            <a href="addpost.php" class="nav-link">Lisää viesti</a>
+            <a href="addpost.php" class="nav-link">Lisaa viesti</a>
           </li>
           <li class="nav-item">
             <a href="logout.php" class="nav-link">Kirjaudu ulos</a>
@@ -28,6 +28,6 @@
         <?php endif; ?>
 
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>

@@ -19,14 +19,17 @@
 	mysqli_close($conn);
 ?>
 
+
 <?php include('layout/header.php'); ?>
 	<div class="container">
 		<h1>Viestit</h1>
 		<?php foreach($posts as $post) : ?>
 			<div class="well">
 				<h3><?php echo $post['aihe']; ?></h3>
-				<small><?php echo $post['pvm']; ?><?php echo $post['lähettäjä']; ?></small>
+				<small><?php echo $post['pvm']; ?><?php echo $post['lahettaja']; ?></small>
 				<p><?php echo $post['viesti']; ?></p>
+        		<a href="<?php echo ROOT_URL; ?>editpost.php?id=">Kirjaudu</a>
+				
 			   </div>
 		<?php endforeach; ?>
 	</div>

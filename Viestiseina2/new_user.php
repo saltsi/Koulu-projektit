@@ -27,7 +27,7 @@ $passwd = password_hash($passwd, PASSWORD_DEFAULT);
 
 
 if ($stmt->execute()) {
-    echo "Käyttäjä lisätty";
+    echo "Kayttäja lisatty";
 } else {
-    echo "Käyttäjää ei lisätty";
+    echo "Kayttäjää ei lisatty";
 }

@@ -6,8 +6,8 @@
 		// Ottaa lomakkeen datan
 		$aihe = mysqli_real_escape_string($conn, $_POST['aihe']);
 		$viesti = mysqli_real_escape_string($conn, $_POST['viesti']);
-		$lähettäjä = mysqli_real_escape_string($conn, $_POST['lähettäjä']);
-		$query = "INSERT INTO viestit(aihe, lahettaja, viesti) VALUES('$aihe', '$lähettäjä', '$viesti')";
+		$lahettaja = mysqli_real_escape_string($conn, $_POST['lahettaja']);
+		$query = "INSERT INTO viestit(aihe, lahettaja, viesti) VALUES('$aihe', '$lahettaja', '$viesti')";
 		if(mysqli_query($conn, $query)){
 			header('Location: '.ROOT_URL.'');
 		} else {
@@ -18,15 +18,15 @@
 
 <?php include('layout/header.php'); ?>
 	<div class="container">
-		<h1>Lisää viesti</h1>
+		<h1>Lisaa viesti</h1>
 		<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
 			<div class="form-group">
 				<label>Aihe</label>
 				<input type="text" name="aihe" class="form-control">
 			</div>
 			<div class="form-group">
-				<label>Lähettäjä</label>
-				<input type="text" name="lähettäjä" class="form-control">
+				<label>Lahettaja</label>
+				<input type="text" name="lahettaja" class="form-control">
 			</div>
 			<div class="form-group">
 				<label>Viesti</label>

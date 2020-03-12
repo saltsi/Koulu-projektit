@@ -7,10 +7,10 @@
 		$update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
 		$aihe = mysqli_real_escape_string($conn, $_POST['aihe']);
 		$viesti = mysqli_real_escape_string($conn, $_POST['viesti']);
-		$lähettäjä = mysqli_real_escape_string($conn,$_POST['lähettäjä']);
+		$lahettaja = mysqli_real_escape_string($conn,$_POST['lahettaja']);
 		$query = "UPDATE viestit SET 
 					aihe = '$aihe',
-					lähettäjä = '$lähettäjä',
+					lahettaja = '$lahettaja',
 					viesti = '$viesti' 
 						WHERE id = {$update_id}";
 		if(mysqli_query($conn, $query)){
@@ -35,22 +35,22 @@
 
 <?php include('layout/header.php'); ?>
 	<div class="container">
-		<h1>Add Post</h1>
+		<h1>edit post</h1>
 		<form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
 			<div class="form-group">
 				<label>Aihe</label>
 				<input type="text" name="aihe" class="form-control" value="<?php echo $post['aihe']; ?>">
 			</div>
 			<div class="form-group">
-				<label>Lähettäjä</label>
-				<input type="text" name="lähettäjä" class="form-control" value="<?php echo $post['lähettäjä']; ?>">
+				<label>Lahettaja</label>
+				<input type="text" name="lahettaja" class="form-control" value="<?php echo $post['lahettaja']; ?>">
 			</div>
 			<div class="form-group">
 				<label>Viesti</label>
 				<textarea name="viesti" class="form-control"><?php echo $post['viesti']; ?></textarea>
 			</div>
 			<input type="hidden" name="update_id" value="<?php echo $post['id']; ?>">
-			<input type="submit" name="submit" value="Lähetä" class="btn btn-primary">
+			<input type="submit" name="submit" value="Lahettaja" class="btn btn-primary">
 		</form>
 	</div>
 <?php include('layout/footer.php'); ?>

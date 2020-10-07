@@ -16,6 +16,7 @@
 	}
 ?>
 
+
 <?php include('layout/header.php'); ?>
 	<div class="container">
 		<h1>Lisaa viesti</h1>
@@ -34,5 +35,5 @@
 			</div>
 			<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 		</form>
-	</div>
+	</div> 
 <?php include('layout/footer.php'); ?>

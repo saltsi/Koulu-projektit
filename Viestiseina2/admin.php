@@ -9,11 +9,11 @@
 	require('config/db.php');
 	    // Luo id mukaisen jonon
 	$query = 'SELECT * FROM viestit ORDER BY id DESC';
-	    // Get Result
+	    // Hakee queryn
 	$result = mysqli_query($conn, $query);
-	    // Fetch Data
+	    // Hakee datan
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	    // Free Result
+	    // Antaa vastauksen
 	mysqli_free_result($result);
         // Sulkee Yhteyden
 	mysqli_close($conn);

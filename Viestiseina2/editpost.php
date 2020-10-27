@@ -19,11 +19,11 @@
 			echo 'ERROR: '. mysqli_error($conn);
 		}
 	}
-	    // Get ID
+	    // Hakee Id
 	$id = mysqli_real_escape_string($conn, $_GET['id']);
 	    // Create Query
 	$query = 'SELECT * FROM viestit WHERE id = '.$id;
-	    // Get Result
+	    // Ottaa Vastauksen
 	$result = mysqli_query($conn, $query);
 	    // Fetch Data
 	$post = mysqli_fetch_assoc($result);

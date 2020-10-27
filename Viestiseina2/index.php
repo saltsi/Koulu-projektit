@@ -10,7 +10,7 @@
 		// var_dump($posts);
 		// Free Result
 	mysqli_free_result($result);
-		// close Connection
+		// Sulkee Yhteyden
 	mysqli_close($conn);
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-
+    // delete
 if (!isset($_GET['id'])) {
     die('id puuttuu');
 }

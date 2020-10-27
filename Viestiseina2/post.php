@@ -1,4 +1,5 @@
 <?php
+		// post php
 	require('config/config.php');
 	require('config/db.php');
 	    // Check For Submit

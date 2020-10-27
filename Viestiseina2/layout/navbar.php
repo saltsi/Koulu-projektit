@@ -18,7 +18,7 @@
             <li><a href="<?php echo ROOT_URL; ?>login.php">Kirjaudu</a></li>
             <li><a href="logout.php" class="nav-link">Kirjaudu ulos</a></li>
 
-              <?php if (isset($_SESSION['email'])): ?>
+            <?php if (isset($_SESSION['email'])): ?>
           <li class="nav-item">
             <a href="addpost.php" class="nav-link">Lisaa viesti</a>
           </li>

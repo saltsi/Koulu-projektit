@@ -1,4 +1,5 @@
 <?php
+        // uusi käyttäjä
 session_start();
 
 include_once 'config/db_pdo.php';

@@ -1,4 +1,5 @@
 <?php
+        // rekisteröinti
 require('config/config.php');
 include 'layout/header.php'; ?>
 
